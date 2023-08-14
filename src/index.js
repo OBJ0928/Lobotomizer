@@ -1,11 +1,12 @@
 const { Client, IntentsBitField } = require('discord.js');
+const { token, prefix, prompt } = require('./config.json');
 
 const client = new Client({
     intents: [
-        IntentsBitField.Flags.Guilds,
-        IntentsBitField.Flags.GuildMembers,
-        IntentsBitField.Flags.GuildMessages,
-        IntentsBitField.Flags.MessageContent,
+        IntentsBitField.FLAGS.GUILDS,
+        IntentsBitField.FLAGS.GUILD_MEMBERS,
+        IntentsBitField.FLAGS.GUILD_MESSAGES,
+        IntentsBitField.FLAGS.MESSAGE_CONTENT,
     ]
 });
 
@@ -19,16 +20,15 @@ client.on('messageCreate', (message) => {
         console.log('Message was from bot, returning');
         return;
     }
+});
+
+client.on('messageCreate', (message) => {
+    console.log('Received message: ' + message.content);
+    if 
 
 
-
-  if (message.author = client.user) {
-        console.log('Sending reply');
-        message.reply('hello');
- 
-    }
+client.login(token).then(() => {
+    console.log('Connected to Discord.')
+}).catch((err) => {
+    console.error(err)
 })
-
-
-
-client.login("NjcyMDk5ODQ2MTIzMTU5NjAy.GhGe3d.od4AepBbwWi5FDfZRTnyxLcEdwKoLL-E032TD4");
