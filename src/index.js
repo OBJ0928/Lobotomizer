@@ -22,9 +22,6 @@ client.on('messageCreate', (message) => {
     }
 });
 
-client.on('messageCreate', (message) => {
-    console.log('Received message: ' + message.content);
-    if 
 
 
 client.login(token).then(() => {
